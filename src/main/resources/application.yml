@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: "Spring-boot-cloud-native-buildpack-example"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# Customize Spring Boot Info actuator
+info:
+  java.vm.vendor: ${java.vm.vendor}
+  java.version: ${java.version}
+  application.encoding: @project.build.sourceEncoding@
+  application.name: ${spring.application.name}
+  spring.boot.version: @spring-boot.version@
